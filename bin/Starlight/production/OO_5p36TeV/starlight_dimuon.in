@@ -9,17 +9,17 @@ BEAM_1_WS_A = 0.513           # Woods-Saxon skin depth of projectile
 BEAM_1_WS_R = 2.608           # Woods-Saxon nuclear radius of projectile
 BEAM_2_WS_A = 0.513           # Woods-Saxon skin depth of target
 BEAM_2_WS_R = 2.608           # Woods-Saxon nuclear radius of target
-W_MIN = -1
-W_MAX = -1
-W_N_BINS = 50
-RAP_MAX = 2.5    #max y
-RAP_N_BINS = 50  #Bins in y
-CUT_PT = 0       #Cut in pT? 0 = no
-PT_MIN = 1       #Minimum pT in GeV
-PT_MAX = 3.0     #Maximum pT in GeV
-CUT_ETA = 0      #Cut in pseudorapidity? 0 = no
-ETA_MIN = -10
-ETA_MAX = 10
+W_MAX = 202.0                # Max value of w
+W_MIN = 2                    # Min value of w
+W_N_BINS = 500               # Bins i w
+RAP_MAX = 8.                 # max y
+RAP_N_BINS = 80              # Bins i y
+CUT_PT = 1                   # Cut in pT? 0 = (no, 1 = yes)
+PT_MIN = 0.2                 # Minimum pT in GeV
+PT_MAX = 9999.0              # Maximum pT in GeV
+CUT_ETA = 1                  # Cut in pseudorapidity? (0 = no, 1 = yes)
+ETA_MIN = -2.8               # Minimum pseudorapidity
+ETA_MAX = 2.8                # Maximum pseudorapidity
 BREAKUP_MODE = 5             # Controls the nuclear breakup; a 5 here makes no requirement on the breakup of the ions
 INTERFERENCE = 0             # Interference (0 = off, 1 = on)
 IF_STRENGTH = 1.             # % of intefernce (0.0 - 0.1)

@@ -1,12 +1,15 @@
 import FWCore.ParameterSet.Config as cms
 
 externalLHEProducer = cms.EDProducer("ExternalLHEProducer",
-    args = cms.vstring('/cvmfs/cms-griddata.cern.ch/phys_generator/gridpacks_tarball/NeNe/5p36TeV/starlight/incoherent_jpsiToEE/starlight_incoherent_jpsi_dielectron_el8_amd64_gcc12_CMSSW_15_0_11_tarball.tgz'),
+    args = cms.vstring('/cvmfs/cms-griddata.cern.ch/phys_generator/gridpacks_tarball/NeNe/5p36TeV/starlight/GGToEE/starlight_dielectron_el8_amd64_gcc12_CMSSW_15_0_11_tarball.tgz'),
     nEvents = cms.untracked.uint32(1),
     numberOfParameters = cms.uint32(1),
     outputFile = cms.string('cmsgrid_final.lhe'),
     scriptName = cms.FileInPath('GeneratorInterface/LHEInterface/data/run_generic_tarball_cvmfs.sh')
 )
+
+#Link to datacards:
+#https://github.com/cms-sw/genproductions/blob/master/bin/Starlight/production/PbPb_5p36TeV/starlight_dielectron.in
 
 generator = cms.EDFilter("Pythia8HadronizerFilter",
     PythiaParameters = cms.PSet(

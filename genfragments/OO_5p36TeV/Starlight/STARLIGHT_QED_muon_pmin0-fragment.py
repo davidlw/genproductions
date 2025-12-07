@@ -1,12 +1,15 @@
 import FWCore.ParameterSet.Config as cms
 
 externalLHEProducer = cms.EDProducer("ExternalLHEProducer",
-    args = cms.vstring('/cvmfs/cms-griddata.cern.ch/phys_generator/gridpacks_tarball/NeNe/5p36TeV/starlight/incoherent_jpsiToEE/starlight_incoherent_jpsi_dielectron_el8_amd64_gcc12_CMSSW_15_0_11_tarball.tgz'),
+    args = cms.vstring('/cvmfs/cms-griddata.cern.ch/phys_generator/gridpacks_tarball/OO/5p36TeV/starlight/GGToMuMu/starlight_dimuon_el8_amd64_gcc12_CMSSW_15_0_11_tarball.tgz'),
     nEvents = cms.untracked.uint32(1),
     numberOfParameters = cms.uint32(1),
     outputFile = cms.string('cmsgrid_final.lhe'),
     scriptName = cms.FileInPath('GeneratorInterface/LHEInterface/data/run_generic_tarball_cvmfs.sh')
 )
+
+#Link to datacards:
+#https://github.com/cms-sw/genproductions/blob/master/bin/Starlight/production/PbPb_5p36TeV/starlight_dimuon.in
 
 generator = cms.EDFilter("Pythia8HadronizerFilter",
     PythiaParameters = cms.PSet(
@@ -23,15 +26,15 @@ generator = cms.EDFilter("Pythia8HadronizerFilter",
     pythiaPylistVerbosity = cms.untracked.int32(1)
 )
 
-elelgenfilter = cms.EDFilter("MCParticlePairFilter",
+mumugenfilter = cms.EDFilter("MCParticlePairFilter",
     Status = cms.untracked.vint32(1, 1),
     MinPt = cms.untracked.vdouble(0.5, 0.5),
-    MinP = cms.untracked.vdouble(0., 0.),
-    MaxEta = cms.untracked.vdouble(3.0, 3.0),
-    MinEta = cms.untracked.vdouble(-3.0, -3.0),
+    MinP = cms.untracked.vdouble(0.0, 0.0),
+    MaxEta = cms.untracked.vdouble(2.5, 2.5),
+    MinEta = cms.untracked.vdouble(-2.5, -2.5),
     ParticleCharge = cms.untracked.int32(-1),
-    ParticleID1 = cms.untracked.vint32(11),
-    ParticleID2 = cms.untracked.vint32(11)
+    ParticleID1 = cms.untracked.vint32(13),
+    ParticleID2 = cms.untracked.vint32(13)
 )
 
-ProductionFilterSequence = cms.Sequence(generator*elelgenfilter)
+ProductionFilterSequence = cms.Sequence(generator*mumugenfilter)

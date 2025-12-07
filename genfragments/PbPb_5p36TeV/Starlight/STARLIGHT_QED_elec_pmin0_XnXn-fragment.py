@@ -1,7 +1,7 @@
 import FWCore.ParameterSet.Config as cms
 
 externalLHEProducer = cms.EDProducer("ExternalLHEProducer",
-    args = cms.vstring('/eos/cms/store/group/phys_heavyions/davidlw/starlight/production/2023/PbPb_5p36TeV/starlight_dielectron_XnXn_el8_amd64_gcc11_CMSSW_13_0_18_HeavyIon_tarball.tgz'),
+    args = cms.vstring('/cvmfs/cms-griddata.cern.ch/phys_generator/gridpacks_tarball/PbPb/5p36TeV/starlight/GGToEE/starlight_dielectron_XnXn__tarball.tgz'),
     nEvents = cms.untracked.uint32(1),
     numberOfParameters = cms.uint32(1),
     outputFile = cms.string('cmsgrid_final.lhe'),
