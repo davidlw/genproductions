@@ -1,0 +1,25 @@
+# UPC-specific X(3872) decay file
+# X(3872) -> J/psi + rho0 (100%)
+
+Alias      MyJ/psi  J/psi
+ChargeConj MyJ/psi  MyJ/psi
+
+Decay MyJ/psi
+  1.000         mu+       mu-            PHOTOS VLL;
+Enddecay
+
+Alias Myrho0 rho0
+ChargeConj Myrho0 Myrho0
+
+Decay Myrho0
+  1.000         pi+       pi-            VSS;
+Enddecay
+
+Alias      myX(3872)  X(3872)
+ChargeConj myX(3872)  myX(3872)
+
+Decay myX(3872)
+  1.000         MyJ/psi      Myrho0       PHSP;
+Enddecay
+
+End
