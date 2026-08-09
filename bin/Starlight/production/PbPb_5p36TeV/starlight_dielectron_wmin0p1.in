@@ -6,12 +6,12 @@ BEAM_2_Z = 82                # Z of target
 BEAM_2_A = 208               # A of target
 COLL_E = 5362                # Collision energy in GeV
 W_MAX = 202.0                # Max value of w
-W_MIN = 2.0                  # Min value of w
+W_MIN = 0.1                  # Min value of w
 W_N_BINS = 500               # Bins i w
 RAP_MAX = 8.                 # max y
 RAP_N_BINS = 80              # Bins i y
 CUT_PT = 1                   # Cut in pT? 0 = (no, 1 = yes)
-PT_MIN = 0.2                 # Minimum pT in GeV
+PT_MIN = 0.05                # Minimum pT in GeV
 PT_MAX = 9999.0              # Maximum pT in GeV
 CUT_ETA = 1                  # Cut in pseudorapidity? (0 = no, 1 = yes)
 ETA_MIN = -2.8               # Minimum pseudorapidity
